@@ -20,6 +20,9 @@ def Ufun(x, a, k, m):
     y = k * ((x - a) ** m) * (x > a) + k * ((-x - a) ** m) * (x < (-a))
     return y
 
+def F01(x):
+    s = -(x[0]**2 + x[1] - 11)**2 + -(x[0] + x[1]**2 -7)**2 
+    return s
 
 def F1(x):
     s = numpy.sum(x ** 2)
@@ -335,6 +338,7 @@ def F23(L):
 def getFunctionDetails(a):
     # [name, lb, ub, dim]
     param = {
+        "F01": ["F01", -5, 5, 2],
         "F1": ["F1", -100, 100, 30],
         "F2": ["F2", -10, 10, 30],
         "F3": ["F3", -100, 100, 30],
